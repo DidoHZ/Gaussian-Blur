@@ -102,8 +102,6 @@ int main(int argc, char * argv[])
         r_chanel[i] = data[n*i + 2] / 255.f;
     }
     
-    stbi_image_free(data);
-    
     cout << "process... " << endl;
         
     auto start = chrono::system_clock::now();
@@ -136,6 +134,8 @@ int main(int argc, char * argv[])
     delete[] new_r;
     delete[] new_b;
     delete[] new_g;
+	
+    stbi_image_free(data);
     
     return 0;
 }
