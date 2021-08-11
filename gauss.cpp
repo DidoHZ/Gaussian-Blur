@@ -80,13 +80,13 @@ int main(int argc, char * argv[])
     int x,y,n;
     unsigned char *data = stbi_load(filename.c_str(), &x, &y, &n, 0);
     
-    cout << "Image Properties : " << x << "x" << y << endl;
-    
     if(data == nullptr)
     {
-    	cout << "error while loading.	" << endl;
+    	cout << "error while loading image.	" << endl;
     	exit(1);
     }
+	
+    cout << "Image Properties : " << x << "x" << y << (n==3?" RGB":" RGBA") <<endl;
     
     float * b_chanel = new float[x*y];
     float * g_chanel = new float[x*y];
